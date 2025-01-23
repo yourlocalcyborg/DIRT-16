@@ -27,7 +27,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - 480x360 8-bit color framebuffer (~170KB)
 - Hardware blitter for rectangles and sprites
 - Sound system for music and SFX
-- Circuit-switched network
+- Circuit-switched networking
 
 ## Low-level Specification
 
