@@ -9,6 +9,12 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
 - More powerful than the SNES but less than the N64
 - Circuit-switched networking a-la dial-up
 
+## Todo list
+- [ ] Implement Backend (CPU emulation library and related things)
+- [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
+- [ ] Create assets for frontend
+- [ ] Clearer documentation of technical aspects
+
 ## System Specification
 - 24MHz master clock, 6MHz CPU clock (i.e. 4 master clock cycles per CPU cycle)
 - 16-bit word size, 32-bit addr size
