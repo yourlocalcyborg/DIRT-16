@@ -28,8 +28,8 @@ It'll be a part of a fictional universe and made by a company called Generator I
 ## CPU Specification
 - 6MHz
 - 4 registers (r0, r1, r2, r3)
-- Program Counter
-- Stack Pointer, full descending
+- 32-bit Program Counter
+- 32-bit Stack Pointer, full descending
 - Status Register, 8-bit (IONVZCUU)
     - IRQ1 disable (I)
     - IRQ2 disable (O)
