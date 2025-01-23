@@ -97,4 +97,3 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - CMP Rx Ry
     - SRR Rx, (shift)
     - SRL Rx
-    - three potential opcodes left for 4 bit instruction code
