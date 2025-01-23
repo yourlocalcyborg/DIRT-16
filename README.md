@@ -26,6 +26,8 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - 512KB memory, 512KB data drive
 - 480x320 8-bit color framebuffer (150KB)
 - Hardware blitter for rectangles and sprites
+- Sound system for music and SFX
+- Circuit-switched network
 
 ## Low-level Specification
 
@@ -50,27 +52,27 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - ABORT
 - Interrupt vectors at end of ROM a-la 6502
 - Conditional execution a-la ARM (b, beq as branch and branch if equal)
-    - xEQ, Z set
-    - xNE, Z clear
-    - xCS, C set
-    - xCC, C clear
-    - xMI, N set
-    - xPL, N clear
-    - xVS, V set
-    - xVC, V clear
-    - xHI, C set and Z clear
-    - xLS, C clear or Z set 
-    - xGE, N=V
-    - xLT, N!=V
-    - xGT, Z clear, N=V
-    - xLE, Z set, N!=V
-    - xAL, always executes (normally omitted)
+    - xAL, always executes (normally omitted) (0x0)
+    - xEQ, Z set (0x1)
+    - xNE, Z clear (0x2)
+    - xCS, C set (0x3)
+    - xCC, C clear (0x4)
+    - xMI, N set (0x5)
+    - xPL, N clear (0x6)
+    - xVS, V set (0x7)
+    - xVC, V clear (0x8)
+    - xHI, C set and Z clear (0x9)
+    - xLS, C clear or Z set (0xA)
+    - xGE, N=V (0xB)
+    - xLT, N!=V (0xC)
+    - xGT, Z clear, N=V (0xD)
+    - xLE, Z set, N!=V (0xE)
 - Opcode structure
 ```
-    0000000000000000
-    ----- instruction
-         ------- addressing mode
-                ---- conditional execution
+0000000000000000
+----- instruction
+     ------- addressing mode
+            ---- conditional execution
 ```
 - Argument types
     - Rx
@@ -80,27 +82,29 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - d#DECNUM
     - b#BINNUM
 - ASM Instructions
-    - LDR Rx $ADDR (with single byte or full word addressing modes)
-    - STR Rx $ADDR
-    - ADD Rx Ry Rz, Ry + Rz -> Rx
-    - SUB, same args as ADD
-    - MUL, same args as ADD
-    - DIV, same args as ADD
-    - POP {Rx, PC, SR, SP}
-    - PSH {Rx, PC, SR, SP}
-    - NOP
-    - BRA $ADDR
-    - CLx
+    - LDB Rx $ADDR, load byte
+    - STB Rx $ADDR, store byte
+    - LDW Rx $ADDR, load word (same instruction, different addressing mode as LDB)
+    - STW Rx $ADDR, store word (same instruction, different addressing mode as STB)
+    - ADD Rx Ry Rz, Ry + Rz -> Rx, add
+    - SUB, same args as ADD, subtract
+    - MUL, same args as ADD, multiply
+    - DIV, same args as ADD, divide
+    - PSH {Rx, PC, SR, SP}, push to stack (addressing mode is a 1 or 0 for bit that corresponds to register)
+    - POP {Rx, PC, SR, SP}, pop from stack (addressing mode same as PSH)
+    - NOP, No-operation
+    - BRA $ADDR, branch
+    - CLx, clear status bit
         - CLI, CLO, CLN, CLV, CLZ, CLC 
-    - SEx
+    - SEx, set status bit
         - SEI, SEO, SEN, SEV, SEZ, SEC
-    - INC Rx
-    - DEC Rx
-    - STP
-    - SWP Rx Ry
-    - CMP Rx Ry
-    - SRR Rx, (shift)
-    - SRL Rx
+    - INC Rx, increment register
+    - DEC Rx, decrement register
+    - STP, stop execution
+    - SWP Rx Ry, swap registers
+    - CMP Rx Ry, compare registers (subtract and set bits, but don't store result)
+    - SRR Rx Ry Rz, shift register right
+    - SRL Rx Ry Rz, shift register left
 
 ### Hardware Blitter Spec
     - Does not share memory with CPU, internals locked off from user
@@ -123,6 +127,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 ### Sound System Spec
 - 6x Waveform channels
     - Select pulse, triangle, noise, sawtooth
+- 2x PCM channels
 
 ### Networking Spec
 - Current ideas are rough
