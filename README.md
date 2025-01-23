@@ -23,7 +23,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - 24MHz master clock, 6MHz CPU clock (i.e. 4 master clock cycles per CPU cycle)
 - 16-bit word size, 32-bit addr size
 - 512kb memory, 512kb data drive
-- 640x480 framebuffer
+- 480x320 framebuffer (150kb)
 
 ## CPU Specification
 - 6MHz
