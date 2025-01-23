@@ -1,5 +1,5 @@
 # DIRT-16
-The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
+DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
 It'll be a part of a fictional universe and made by a company called Generator Inc. whose logo is based off of a dahlia.
 
 ## Project Goals
