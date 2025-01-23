@@ -11,6 +11,9 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
 
 ## Todo list
 - [ ] Implement Backend (CPU emulation library and related things)
+- [ ] Write assembler for machine
+- [ ] Write compiler for machine
+- [ ] Make test binaries for machine
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
