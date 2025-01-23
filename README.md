@@ -62,7 +62,7 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
     0000000000000000
     ----- instruction
          --- addressing mode
-            -------- conditional execution (can take two conditions)
+            -------- conditional execution (can take two conditions, combined via OR gate but might change decision on that)
 ```
 - Argument types
     - Rx
