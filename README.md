@@ -26,14 +26,14 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
 - 6 registers (r0, r1, r2, r3, r4, r5)
 - Program Counter
 - Stack Pointer
-- Status Register, 8-bit (IONVZCXYW)
+- Status Register, 8-bit (IONVZCUU)
     - IRQ1 disable (I)
     - IRQ2 disable (O)
     - Negative (N)
     - Overflow (V)
     - Zero (Z)
     - Carry (C)
-    - 3 status bits unused
+    - 2 status bits unused (UU)
 - Interrupts
     - IRQ1
     - IRQ2
