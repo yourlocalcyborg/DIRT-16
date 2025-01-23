@@ -24,7 +24,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - Big endian
 - 16-bit word size, 24-bit addr size
 - 512KB memory, 512KB data drive
-- 480x360 8-bit color framebuffer (~170KB)
+- 480x360 8-bit color framebuffer (150KB)
 - Hardware blitter for rectangles and sprites
 - Sound system for music and SFX
 - Circuit-switched network
