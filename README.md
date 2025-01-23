@@ -4,7 +4,6 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## Project Goals
 - 16-bit CPU
-- Big endian
 - Runs on binaries (Will provide assembler and language with compiler)
 - Capable of graphics and sound (3d if possible)
 - Frontend that emulates screen and data drive interface
@@ -22,6 +21,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## System Specification
 - 32MHz master clock, 8MHz CPU clock
+- Big endian
 - 16-bit word size, 24-bit addr size
 - 512KB memory, 512KB data drive
 - 480x320 8-bit color framebuffer (150KB)
