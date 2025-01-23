@@ -58,10 +58,12 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
     - xLE, Z set, N!=V
     - xAL, always executes (normally omitted)
 - Opcode structure
-    - 0000000000000000
-    - ---- instruction
-    -     ---- addressing mode
-    -         -------- conditional execution (can take two conditions)
+```
+    0000000000000000
+    ---- instruction
+        ---- addressing mode
+            -------- conditional execution (can take two conditions)
+```
 - Argument types
     - Rx
     - $ADDR
