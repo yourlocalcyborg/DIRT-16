@@ -27,7 +27,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## CPU Specification
 - 6MHz
-- 6 registers (r0, r1, r2, r3, r4, r5)
+- 4 registers (r0, r1, r2, r3)
 - Program Counter
 - Stack Pointer
 - Status Register, 8-bit (IONVZCUU)
