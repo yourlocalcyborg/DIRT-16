@@ -4,6 +4,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## Project Goals
 - 16-bit CPU
+- Big endian
 - Runs on binaries (Will provide assembler and language with compiler)
 - Capable of graphics and sound (3d if possible)
 - Frontend that emulates screen and data drive interface
@@ -13,20 +14,23 @@ It'll be a part of a fictional universe and made by a company called Generator I
 ## Todo list
 - [ ] Implement Backend (CPU emulation library and related things)
 - [ ] Write assembler for machine (DIRT16 Advanced High Level Instruction Assembler, or DAHLIA)
-- [ ] Write compiler for machine (Language called DIRTH and similar to FORTH? Who am I kidding it'll be a lisp, maybe call it stutter or asparagus. ASPRGS is fun because it could be asparagus or aspergers?)
+- [ ] Write compiler for machine (DIRTH, language based off of FORTH)
 - [ ] Make test binaries for machine
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
 
 ## System Specification
-- 24MHz master clock, 6MHz CPU clock (i.e. 4 master clock cycles per CPU cycle)
+- 32MHz master clock, 8MHz CPU clock
 - 16-bit word size, 24-bit addr size
-- 512kb memory, 512kb data drive
-- 480x320 framebuffer (150kb)
+- 512KB memory, 512KB data drive
+- 480x320 8-bit color framebuffer (150KB)
+- Hardware blitter for rectangles and sprites
 
-## CPU Specification
-- 6MHz
+## Low-level Specification
+
+### CPU Spec
+- 8MHz
 - 4 registers (r0, r1, r2, r3)
 - 24-bit Program Counter
 - 24-bit Stack Pointer, full descending
@@ -97,3 +101,40 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - CMP Rx Ry
     - SRR Rx, (shift)
     - SRL Rx
+
+### Hardware Blitter Spec
+    - Does not share memory with CPU, internals locked off from user
+    - CPU handles sprite tables
+    - Registers
+        - BLT_SRC_HB, source addr in mem high byte (8-bit)
+        - BLT_SRC_LW, source addr in mem low word (16-bit)
+        - BLT_DST, dest addr in mem (16-bit offset from framebuffer start)
+        - BLT_W, width of rectangle (16-bit)
+        - BLT_H, height of rectangle (16-bit)
+        - BLT_COL, colour of rectangle if just filling, colour to make transparent if pasting (8-bit)
+        - BLT_CTRL, control flags (8-bit)
+            - bits 0-1 are blit mode, 0x0 to fill rect, 0x1 to copy rect, 0x2 to paste rect, 0x3 to paste rect w/ no transparency
+            - bits 2-3 are rotation, 00 is no rotation, 01 is 90 degree rotation, 10 is 180 degrees, 11 is 270
+            - bits 4-5 are flip 00 is no flip, 01 horizontal, 10 vertical, 11 horizontal and vertical)
+        - BLT_CMD, write to start operation (8-bit)
+        - BLT_STATUS, read to check completion status (8-bit)
+    - Clips automatically if not within framebuffer bounds
+
+### Sound System Spec
+- 6x Waveform channels
+    - Select pulse, triangle, noise, sawtooth
+
+### Networking Spec
+- Current ideas are rough
+- Switchboard server program that acts as middleman
+- Circuit-switched
+- Phone numbers assigned to users
+- Bandwidth limit (~4 kbit/s)
+- Latency (70ms added)
+
+### Software Toolchain
+#### DAHLIA
+- DIRT-16 Advanced High Level Instruction Assembler
+
+#### DIRTH
+- Programming language based off of FORTH
