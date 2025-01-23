@@ -21,15 +21,15 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## System Specification
 - 24MHz master clock, 6MHz CPU clock (i.e. 4 master clock cycles per CPU cycle)
-- 16-bit word size, 32-bit addr size
+- 16-bit word size, 24-bit addr size
 - 512kb memory, 512kb data drive
 - 480x320 framebuffer (150kb)
 
 ## CPU Specification
 - 6MHz
 - 4 registers (r0, r1, r2, r3)
-- 32-bit Program Counter
-- 32-bit Stack Pointer, full descending
+- 24-bit Program Counter
+- 24-bit Stack Pointer, full descending
 - Status Register, 8-bit (IONVZCUU)
     - IRQ1 disable (I)
     - IRQ2 disable (O)
@@ -76,7 +76,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - d#DECNUM
     - b#BINNUM
 - ASM Instructions
-    - LDR Rx $ADDR
+    - LDR Rx $ADDR (with single byte or full word addressing modes)
     - STR Rx $ADDR
     - ADD Rx Ry Rz, Ry + Rz -> Rx
     - SUB, same args as ADD
