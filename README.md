@@ -1,5 +1,6 @@
 # DIRT-16
 The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
+It'll be a part of a fictional universe and made by a company called Generator Inc. whose logo is based off of a dahlia.
 
 ## Project Goals
 - 16-bit CPU
@@ -11,7 +12,7 @@ The DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-in
 
 ## Todo list
 - [ ] Implement Backend (CPU emulation library and related things)
-- [ ] Write assembler for machine (DASM?)
+- [ ] Write assembler for machine (DASM is already taken, maybe a play on wagon like WAGN? Or DAHLIA from Gen. Inc. logo?)
 - [ ] Write compiler for machine (Language called DIRTH and similar to FORTH? Who am I kidding it'll be a lisp, maybe call it stutter or asparagus)
 - [ ] Make test binaries for machine
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
