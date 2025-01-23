@@ -65,8 +65,8 @@ It'll be a part of a fictional universe and made by a company called Generator I
 ```
     0000000000000000
     ----- instruction
-         --- addressing mode
-            -------- conditional execution (can take two conditions, combined via OR gate but might change decision on that)
+         ------- addressing mode
+                ---- conditional execution
 ```
 - Argument types
     - Rx
