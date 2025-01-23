@@ -12,7 +12,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ## Todo list
 - [ ] Implement Backend (CPU emulation library and related things)
-- [ ] Write assembler for machine (DASM is already taken, maybe a play on wagon like WAGN? Or DAHLIA from Gen. Inc. logo?)
+- [ ] Write assembler for machine (DASM is already taken, maybe a play on wagon like WAGN? Or DAHLIA from Gen. Inc. logo? DIRT16-Assembly-Handling Linking-Assembler?)
 - [ ] Write compiler for machine (Language called DIRTH and similar to FORTH? Who am I kidding it'll be a lisp, maybe call it stutter or asparagus)
 - [ ] Make test binaries for machine
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
