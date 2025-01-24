@@ -86,7 +86,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - STB rx $ADDR, store byte
     - LDW rx $ADDR, load word (same instruction, different addressing mode as LDB)
     - STW rx $ADDR, store word (same instruction, different addressing mode as STB)
-    - ADD rx Ry Rz, Ry + Rz -> rx, add
+    - ADD rx ry rz, ry + rz -> rx, add
     - SUB, same args as ADD, subtract
     - MUL, same args as ADD, multiply
     - DIV, same args as ADD, divide
@@ -101,10 +101,14 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - INC rx, increment register
     - DEC rx, decrement register
     - STP, stop execution
-    - SWP rx Ry, swap registers
-    - CMP rx Ry, compare registers (subtract and set bits, but don't store result)
-    - SRR rx Ry Rz, shift register right
-    - SRL rx Ry Rz, shift register left
+    - SWP rx ry, swap registers
+    - CMP rx ry, compare registers (subtract and set bits, but don't store result)
+    - SRR rx ry rz, shift register right
+    - SRL rx ry rz, shift register left
+    - AND rx, bitwise AND
+    - OR rx, bitwise OR
+    - XOR rx, bitwise XOR
+    - NOT rx, bitwise NOT
 
 ### Hardware Blitter Spec
     - Does not share memory with CPU, internals locked off from user
