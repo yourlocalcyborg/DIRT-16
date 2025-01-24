@@ -39,14 +39,17 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - Status Register, 8-bit (IONVZCUU)
     - IRQ1 disable (I)
     - IRQ2 disable (O)
+    - IRQ3 disable (P)
+    - IRQ4 disable (Q)
     - Negative (N)
     - Overflow (V)
     - Zero (Z)
     - Carry (C)
-    - 2 status bits unused (UU)
 - Interrupts
     - IRQ1
     - IRQ2
+    - IRQ3
+    - IRQ4
     - NMI (non-maskable)
     - RESET
     - ABORT
@@ -95,9 +98,9 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - NOP, No-operation
     - BRA $ADDR, branch
     - CLx, clear status bit
-        - CLI, CLO, CLN, CLV, CLZ, CLC 
+        - CLI, CLO, CLP, CLQ, CLN, CLV, CLZ, CLC 
     - SEx, set status bit
-        - SEI, SEO, SEN, SEV, SEZ, SEC
+        - SEI, SEO, SEP, SEQ, SEN, SEV, SEZ, SEC
     - INC rx, increment register
     - DEC rx, decrement register
     - STP, stop execution
