@@ -1,4 +1,4 @@
-<img src="frontend/assets/GenIncLockup.png" alt="Generator Inc. Logo" style="display: block; margin-left: auto; margin-right: auto; background-color: #C2B4E4" width="300pt"/>
+<img src="frontend/assets/GenIncLockup.png" alt="Generator Inc. Logo" width="300pt"/>
 
 # DIRT-16
 DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
