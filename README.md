@@ -1,4 +1,4 @@
-[frontend\assets\GenIncLockup.png](frontend\assets\GenIncLockup.png)
+![frontend\assets\GenIncLockup.png](frontend\assets\GenIncLockup.png)
 
 # DIRT-16
 DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
