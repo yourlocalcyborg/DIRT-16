@@ -20,7 +20,9 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
-- [ ] Figure out a solution to the framebuffer. It does not take ~170KB, that would be if each pixel was 8 bits. 480x360 at 8-bit color is 4050KB. 8-bit color means 8+8+8 bits as in 8-bits per R, G, and B channel. Realistically should just have way more memory. Also probably means I need more space in the data catridge in order to store graphics. 
+- [ ] Figure out a solution to the framebuffer. It does not take ~170KB, that would be if each pixel was 8 bits. 480x360 at 8-bit color is 4050KB. 8-bit color means 8+8+8 bits as in 8-bits per R, G, and B channel. Realistically should just have way more memory. Also probably means I need more space in the data catridge in order to store graphics. Alternatively, could just used indexed color palette.
+- [ ] Perhaps need to change BLT_DST in blitter to be a 24-bit addr to be able to address all 170KB.
+- [ ] Likely need to change cartridge size regardless of graphics approach.
 
 ## System Specification
 - 32MHz master clock, 8MHz CPU clock
@@ -39,11 +41,11 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - 4 registers (r0, r1, r2, r3)
 - 24-bit Program Counter
 - 24-bit Stack Pointer, full descending
-- Status Register, 8-bit (IONVZCUU)
-    - IRQ1 disable (I)
-    - IRQ2 disable (O)
-    - IRQ3 disable (P)
-    - IRQ4 disable (Q)
+- Status Register, 8-bit (PQRSNVZC)
+    - IRQ1 disable (P)
+    - IRQ2 disable (Q)
+    - IRQ3 disable (R)
+    - IRQ4 disable (S)
     - Negative (N)
     - Overflow (V)
     - Zero (Z)
@@ -74,6 +76,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - xGT, Z clear, N=V (0xD)
     - xLE, Z set, N!=V (0xE)
 - Opcode structure
+    - 5 bit instruction,  7 bit addressing mode, 4 bit condition
 ```
 0000000000000000
 ----- instruction
@@ -101,9 +104,9 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - NOP, No-operation
     - BRA $ADDR, branch
     - CLx, clear status bit
-        - CLI, CLO, CLP, CLQ, CLN, CLV, CLZ, CLC 
+        - CLP, CLQ, CLR, CLS, CLN, CLV, CLZ, CLC 
     - SEx, set status bit
-        - SEI, SEO, SEP, SEQ, SEN, SEV, SEZ, SEC
+        - SEP, SEQ, SER, SES, SEN, SEV, SEZ, SEC
     - INC rx, increment register
     - DEC rx, decrement register
     - STP, stop execution
