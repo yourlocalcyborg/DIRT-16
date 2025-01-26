@@ -20,6 +20,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
+- [ ] Figure out a solution to the framebuffer. It does not take ~170KB, that would be if each pixel was 8 bits. 480x360 at 8-bit color is 4050KB. 8-bit color means 8+8+8 bits as in 8-bits per R, G, and B channel. Realistically should just have way more memory. Also probably means I need more space in the data catridge in order to store graphics. 
 
 ## System Specification
 - 32MHz master clock, 8MHz CPU clock
