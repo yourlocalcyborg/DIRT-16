@@ -103,27 +103,46 @@ The DIRT-16 Advanced High-Level Instruction Assembler, or "DAHLIA" for brevity, 
 
 - Adressing modes (7 bits)
 	- rx (INC/DEC)
-		- 4
+		- total num of modes: 4 (rx)
+			- r0: 0x00
+			- r1: 0x01
+			- r2: 0x02
+			- r3: 0x03
 	- rx ry (SWP)
-		- 4 * 4 = 16
+		- total num of modes: 4 (rx) * 4 (ry) = 16
+			- bits 0-1: rx
+			- bits 2-3: ry
 	- $ADDR
-		- 1 ($#NUM) + 5 ($#NUM + $rx_n) = 6
+		- total num of modes: 1 ($#NUM) + 5 ($#NUM + $rx_n) = 6
+			- $#NUM: 0x00
+			- $(#NUM + rx\_n): 0x1 + rx_n
+				- r0: 0x10
+				- r1: 0x11
+				- r2: 0x12
+				- r4: 0x13
+				- null: 0x14
 	- rx_n $ADDR (LDW/LDB, STW/STB)
 		- rx_n so you can read for the sake of reading
-		- total num of modes: 5 (rx_n) * 5 (#NUM + rx_n) = 5 * 5 = 30)
+		- total num of modes: 5 (rx_n) * 5 (#NUM + rx_n) = 30)
+			- 
 	- rx_n, ry, rz (ADD, SUB, MUL, DIV, SRR, SRL)
 		- rx_n can be null, do math for the sake of setting SR flags
 		- total num of modes: 5 (rx_n) * 4 (ry) * 4 (rz) = 80 -> 7 bits
+			- bits 0-2: rx_n
+			- bits 3-4: ry
+			- bits 5-6: rz
 	- {r0, r1, r2, r3, PC, SR, SP} (PSH, POP)
 		- each bit in mode corresponds to thing you can pop/push to stack (e.g. POP {r0, r2, r3, SP} -> 0b00101 1011001 0000)
 	- Clear/set (CLx, SEx)
-		- P: 0x00
-		- Q: 0x01
-		- R: 0x02
-		- S: 0x03
-		- N: 0x04
-		- V: 0x05
-		- Z: 0x06
-		- C: 0x07
+		- just enumerate each status flag
+		- total num of modes: 8 -> 3 bits
+			- P: 0x00
+			- Q: 0x01
+			- R: 0x02
+			- S: 0x03
+			- N: 0x04
+			- V: 0x05
+			- Z: 0x06
+			- C: 0x07
 	
 
