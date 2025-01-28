@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="GenIncLockUpBackground.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="GenIncLockUpBackground.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.76167929"
+     inkscape:cx="419.46788"
+     inkscape:cy="507.43142"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g6" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g6"
+       transform="translate(-241.71256,-207.73028)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.280822;fill-opacity:1"
+         id="path1"
+         cx="390.21255"
+         cy="312.73029"
+         rx="106.54734"
+         ry="83.621033" />
+      <path
+         id="rect4-22"
+         style="fill:#3a2264;stroke-width:0.0903856"
+         d="m 263.10737,92.568512 6.73924,14.429338 -6.73924,8.70889 -6.73925,-8.70889 z m -28.80819,10.986708 15.74931,5.77649 1.86403,10.5847 -11.39477,-1.73152 z m -0.1796,53.45125 6.21857,-14.62967 11.39478,-1.73152 -1.86405,10.5847 z m 28.73379,11.15354 -6.73924,-14.42934 6.73924,-8.70888 6.73925,8.70888 z m 28.80819,-10.98671 -15.7493,-5.77648 -1.86404,-10.58471 11.39477,1.73152 z m 0.1796,-53.45125 -6.21857,14.62967 -11.39477,1.73152 1.86404,-10.5847 z"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
+         transform="matrix(1.1692635,0,0,1.1692635,99.67686,160.30013)" />
+      <path
+         id="rect4-5-1"
+         style="fill:#3a2264;stroke-width:0.0903856"
+         d="m 250.9811,73.723687 9.64022,12.930781 -4.78071,9.762848 -8.4388,-7.32026 z m -22.42088,8.576982 14.23351,8.519603 -0.39479,10.719138 -10.81217,-3.763234 z m -17.18072,15.894237 16.65987,2.811394 4.05124,10.04352 -11.53949,0.36672 z m -0.14111,64.142534 9.17162,-13.22163 11.53949,0.36672 -4.05124,10.04352 z m 17.11065,15.95932 3.02654,-15.4755 10.81217,-3.76322 0.39479,10.71912 z m 22.38295,8.66203 -3.57929,-15.37336 8.4388,-7.32026 4.7807,9.76284 z m 24.24765,0.046 -9.64021,-12.93078 4.7807,-9.76284 8.4388,7.32025 z m 22.42088,-8.57698 -14.23351,-8.5196 0.39479,-10.71913 10.81217,3.76323 z m 17.18072,-15.89423 -16.65987,-2.81139 -4.05123,-10.04352 11.53948,-0.36672 z m 0.14112,-64.142534 -9.17162,13.221634 -11.53949,-0.36672 4.05124,-10.04352 z M 297.61171,82.431715 294.58517,97.907226 283.773,101.67045 283.37821,90.951322 Z m -22.38295,-8.662034 3.57929,15.373365 -8.4388,7.32027 -4.7807,-9.762853 z"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+         transform="matrix(1.1692635,0,0,1.1692635,99.67686,160.30013)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:0;font-family:'EB Garamond';-inkscape-font-specification:'EB Garamond';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#3a2264;fill-opacity:1;stroke:none;stroke-width:0.264999"
+         x="390.49478"
+         y="321.04874"
+         id="text5-6"><tspan
+           sodipodi:role="line"
+           id="tspan5-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:0;font-family:'Inknut Antiqua Light';-inkscape-font-specification:'Inknut Antiqua Light, ';text-align:center;text-anchor:middle;stroke-width:0.265"
+           x="390.49478"
+           y="321.04874">Generator Inc.</tspan></text>
+    </g>
+  </g>
+</svg>

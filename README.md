@@ -1,4 +1,4 @@
-<img src="frontend/assets/GenIncLockUpBackground.png" alt="Generator Inc. Logo" width="300pt"/>
+<img src="frontend/assets/GeneratorInc/GenIncLockUpBackground.svg" alt="Generator Inc. Logo" width="300pt"/>
 
 # DIRT-16
 DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
@@ -20,7 +20,6 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
-- [ ] Likely need to change cartridge size regardless of graphics approach.
 
 ## System Specification
 - 32MHz master clock, 8MHz CPU clock
@@ -75,12 +74,12 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - xLE, Z set, N!=V (0xE)
 - Opcode structure
     - 5 bit instruction,  7 bit addressing mode, 4 bit condition
-```
-0000000000000000
------ instruction
-     ------- addressing mode
-            ---- conditional execution
-```
+	```
+	0000000000000000
+	----- instruction
+		------- addressing mode
+				---- conditional execution
+	```
 - Argument types
     - rx
     - $ADDR
@@ -159,7 +158,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 | 0xA00000 - 0xA2A2FF | ~170KB  | Framebuffer        |
 | 0xA2A300 - 0xA2A5FF | 768B    | Palette Table      |
 | 0xA2A600 - 0xA2A60F | 16B     | Blitter Registers  |
-| 0xA2A610 - 0xFFFFFF | ~14.3MB | Unused             |
+| 0xA2A610 - 0xFFFFFF | ~14.3MB | Unused / Reserved  |
 
 #### Interrupt Vectors
 - IRQ0 (P): 0x9FFFE9 - 0x9FFFEB
