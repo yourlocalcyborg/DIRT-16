@@ -8,7 +8,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - 16-bit CPU
 - Runs on binaries (Will provide assembler and language with compiler)
 - Capable of graphics and sound (3d if possible)
-- Frontend that emulates screen and data drive interface
+- Frontend that emulates screen and data cartridge interface
 - More powerful than the SNES but less than the N64
 - Circuit-switched networking a-la dial-up
 
@@ -20,16 +20,14 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - [ ] Implement Frontend (Computer with screen reading from framebuffer and drive port to place ports in)
 - [ ] Create assets for frontend
 - [ ] Clearer documentation of technical aspects
-- [ ] Figure out a solution to the framebuffer. It does not take ~170KB, that would be if each pixel was 8 bits. 480x360 at 8-bit color is 4050KB. 8-bit color means 8+8+8 bits as in 8-bits per R, G, and B channel. Realistically should just have way more memory. Also probably means I need more space in the data catridge in order to store graphics. Alternatively, could just used indexed color palette.
-- [ ] Perhaps need to change BLT_DST in blitter to be a 24-bit addr to be able to address all 170KB.
 - [ ] Likely need to change cartridge size regardless of graphics approach.
 
 ## System Specification
 - 32MHz master clock, 8MHz CPU clock
 - Big endian
 - 16-bit word size, 24-bit addr size
-- 512KB memory, 512KB data drive
-- 480x360 8-bit color framebuffer (~170KB)
+- 2MB RAM, 8MB ROM data cartridge
+- 480x360 8-bit indexed palette framebuffer + 8-bit pallete (~173KB)
 - Hardware blitter for rectangles and sprites
 - Sound system for music and SFX
 - Circuit-switched networking
@@ -125,7 +123,8 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - Registers (effectively just locations in mem)
         - BLT_SRC_HB, source addr in mem high byte (8-bit)
         - BLT_SRC_LW, source addr in mem low word (16-bit)
-        - BLT_DST, dest addr in mem (16-bit offset from framebuffer start)
+        - BLT_DST_HB, dest addr in mem (16-bit offset from framebuffer start)
+        - BLT_DST_LW, dest addr in mem (16-bit offset from framebuffer start)
         - BLT_W, width of rectangle (16-bit)
         - BLT_H, height of rectangle (16-bit)
         - BLT_COL, colour of rectangle if just filling, colour to make transparent if pasting (8-bit)
@@ -133,6 +132,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
             - bits 0-1 are blit mode, 0x0 to fill rect, 0x1 to copy rect, 0x2 to paste rect, 0x3 to paste rect w/ no transparency
             - bits 2-3 are rotation, 00 is no rotation, 01 is 90 degree rotation, 10 is 180 degrees, 11 is 270
             - bits 4-5 are flip 00 is no flip, 01 horizontal, 10 vertical, 11 horizontal and vertical)
+            - bits 6-7 are unused
         - BLT_CMD, write to start operation (8-bit)
         - BLT_STATUS, read to check completion status (8-bit)
     - Clips automatically if not within framebuffer bounds
