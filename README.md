@@ -123,8 +123,8 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - Registers (effectively just locations in mem)
         - BLT_SRC_HB, source addr in mem high byte (8-bit)
         - BLT_SRC_LW, source addr in mem low word (16-bit)
-        - BLT_DST_HB, dest addr in mem (16-bit offset from framebuffer start)
-        - BLT_DST_LW, dest addr in mem (16-bit offset from framebuffer start)
+        - BLT_DST_HB, dest addr in mem (8-bit high byte of offset from framebuffer start)
+        - BLT_DST_LW, dest addr in mem (16-bit low word of offset from framebuffer start)
         - BLT_W, width of rectangle (16-bit)
         - BLT_H, height of rectangle (16-bit)
         - BLT_COL, colour of rectangle if just filling, colour to make transparent if pasting (8-bit)
@@ -150,7 +150,28 @@ It'll be a part of a fictional universe and made by a company called Generator I
 - Bandwidth limit (~4 kbit/s)
 - Latency (70ms added)
 
-### Software Toolchain
+### Memory Map
+| Addr range          | Size    | Description        |
+| ------------------- | ------- | ------------------ |
+| 0x000000 - 0x1FFFFF | 2MB     | System RAM         |
+| 0x200000 - 0x9FFFFF | 8MB     | ROM Data Cartridge |
+| 0x9FFFE9 - 0x9FFFFF | 21B     | Interrupt Vectors  |
+| 0xA00000 - 0xA2A2FF | ~170KB  | Framebuffer        |
+| 0xA2A300 - 0xA2A5FF | 768B    | Palette Table      |
+| 0xA2A600 - 0xA2A60F | 16B     | Blitter Registers  |
+| 0xA2A610 - 0xFFFFFF | ~14.3MB | Unused             |
+
+#### Interrupt Vectors
+- IRQ0 (P): 0x9FFFE9 - 0x9FFFEB
+- IRQ1 (Q): 0x9FFFEC - 0x9FFFEE
+- IRQ2 (R): 0x9FFFEF - 0x9FFFF2
+- IRQ3 (S): 0x9FFFF3 - 0x9FFFF6
+- NMI: 0x9FFFF7 - 0x9FFFF9
+- RESET: 0x9FFFFA - 0x9FFFFC
+- ABORT: 0x9FFFFD - 0x9FFFFF
+
+
+## Software Toolchain
 #### DAHLIA
 - DIRT-16 Advanced High Level Instruction Assembler
 
