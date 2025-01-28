@@ -56,7 +56,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - RESET
     - ABORT
 - Interrupt vectors at end of ROM a-la 6502
-- Conditional execution a-la ARM (b, beq as branch and branch if equal)
+- Conditional execution a-la ARM (BRA, BRAEQ as branch and branch if equal)
     - xAL, always executes (normally omitted) (0x0)
     - xEQ, Z set (0x1)
     - xNE, Z clear (0x2)
@@ -87,34 +87,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
     - #HEXNUM
     - d#DECNUM
     - b#BINNUM
-- ASM Instructions
-    - LDB rx $ADDR, load byte
-    - STB rx $ADDR, store byte
-    - LDW rx $ADDR, load word (same instruction, different addressing mode as LDB)
-    - STW rx $ADDR, store word (same instruction, different addressing mode as STB)
-    - ADD rx ry rz, ry + rz -> rx, add
-    - SUB, same args as ADD, subtract
-    - MUL, same args as ADD, multiply
-    - DIV, same args as ADD, divide
-    - PSH {r0, r1, r2, r3, PC, SR, SP}, push to stack (addressing mode is a 1 or 0 for bit that corresponds to register)
-    - POP {r0, r1, r2, r3, PC, SR, SP}, pop from stack (addressing mode same as PSH)
-    - NOP, No-operation
-    - BRA $ADDR, branch
-    - CLx, clear status bit
-        - CLP, CLQ, CLR, CLS, CLN, CLV, CLZ, CLC 
-    - SEx, set status bit
-        - SEP, SEQ, SER, SES, SEN, SEV, SEZ, SEC
-    - INC rx, increment register
-    - DEC rx, decrement register
-    - STP, stop execution
-    - SWP rx ry, swap registers
-    - CMP rx ry, compare registers (subtract and set bits, but don't store result)
-    - SRR rx ry rz, shift register right
-    - SRL rx ry rz, shift register left
-    - AND rx, bitwise AND
-    - OR rx, bitwise OR
-    - XOR rx, bitwise XOR
-    - NOT rx, bitwise NOT
+- ASM documented in DAHLIA docfile
 
 ### Hardware Blitter Spec
     - Does not share memory with CPU, internals locked off from user
