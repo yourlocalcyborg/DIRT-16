@@ -1,7 +1,7 @@
 <img src="frontend/assets/GeneratorInc/GenIncLockUpBackground.svg" alt="Generator Inc. Logo" width="300pt"/>
 
 # DIRT-16
-DIRT-16 is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
+DIRT-16 (Dynamic Instruction and Register Toolkit - 16) is a 16-bit fantasy computer for recreational computing and retro-inspired game development. Features are described below.
 It'll be a part of a fictional universe and made by a company called Generator Inc. whose logo is based off of a dahlia. I will write more details about the universe in the future. 
 
 ## Project Goals
