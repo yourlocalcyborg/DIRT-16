@@ -33,7 +33,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 
 ### CPU Spec
 - 8MHz
-- 4 registers (r0, r1, r2, r3)
+- 4 16-bit registers (r0, r1, r2, r3)
 - 24-bit Program Counter
 - 24-bit Stack Pointer, full descending
 - Status Register, 8-bit (PQRSNVZC)
