@@ -69,7 +69,6 @@ The DIRT-16 Advanced High-Level Instruction Assembler, or "DAHLIA" for brevity, 
     - Zero (Z)
     - Carry (C)
 
-
 # DIRT-16 Machine Code
 - Opcode structure
     - 5 bit instruction,  7 bit addressing mode, 4 bit condition
@@ -119,7 +118,7 @@ The DIRT-16 Advanced High-Level Instruction Assembler, or "DAHLIA" for brevity, 
 				- r0: 0x10
 				- r1: 0x11
 				- r2: 0x12
-				- r4: 0x13
+				- r3: 0x13
 				- null: 0x14
 	- rx_n $ADDR (LDW/LDB, STW/STB)
 		- rx_n so you can read for the sake of reading

@@ -75,7 +75,7 @@ It'll be a part of a fictional universe and made by a company called Generator I
 	```
 	0000000000000000
 	----- instruction
-		------- addressing mode
+ 		 ------- addressing mode
 				---- conditional execution
 	```
 - Argument types
